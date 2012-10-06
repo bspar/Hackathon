@@ -3,6 +3,7 @@ package com.USF.PocketAdvisor;
 import android.app.ActionBar;
 import android.app.FragmentTransaction;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -13,18 +14,58 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends FragmentActivity implements ActionBar.TabListener {
 
     private static final String STATE_SELECTED_NAVIGATION_ITEM = "selected_navigation_item";
+    
+    private Button classes;
+    private Button check;
+    private Button myClasses;
+    private Button myProfile;
+    private Button settings;
 
+    private void initButtons() {
+        classes = (Button)this.findViewById(R.id.classes);
+        check = (Button)this.findViewById(R.id.check);
+        myClasses = (Button)this.findViewById(R.id.myClasses);
+        myProfile = (Button)this.findViewById(R.id.myProfile);
+        settings = (Button)this.findViewById(R.id.settings);
+
+       	myClasses.setText("Show My Classes");
+       	myClasses.setOnClickListener(new OnClickListener(){
+       		public void onClick(View v) {
+       			setContentView(R.layout.my_classes);
+       		}
+       	});
+       	
+       	classes.setText("Search Classes");
+       	classes.setOnClickListener(new OnClickListener(){
+       		public void onClick(View v) {
+       			setContentView(R.layout.class_sched_search);
+       		}
+       	});
+       	
+                
+                // Button mainNext = (Button) findViewById(R.id.nextScreenMain);
+                // mainNext.setOnClickListener(new OnClickListener() {
+                  //   public void onClick(View v) {
+                    //     Intent i = new Intent();
+                      //   i.setClassName("com.screenssample", "com.screenssample.screen1");
+                        // startActivity(i)
+    }
+    
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        
+        initButtons();
+        
         // Set up the action bar.
         final ActionBar actionBar = getActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
@@ -69,7 +110,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         args.putInt(DummySectionFragment.ARG_SECTION_NUMBER, tab.getPosition() + 1);
         fragment.setArguments(args);
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, fragment)
+               // .replace(R.id.container, fragment)
                 .commit();
     }
 

@@ -18,8 +18,12 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.ArrayAdapter;
+import android.app.ListActivity;
+
 
 public class MainActivity extends FragmentActivity implements ActionBar.TabListener {
+	
 
     private static final String STATE_SELECTED_NAVIGATION_ITEM = "selected_navigation_item";
     
@@ -49,16 +53,10 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
        			setContentView(R.layout.class_sched_search);
        		}
        	});
-       	
-                
-                // Button mainNext = (Button) findViewById(R.id.nextScreenMain);
-                // mainNext.setOnClickListener(new OnClickListener() {
-                  //   public void onClick(View v) {
-                    //     Intent i = new Intent();
-                      //   i.setClassName("com.screenssample", "com.screenssample.screen1");
-                        // startActivity(i)
+
     }
     
+	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

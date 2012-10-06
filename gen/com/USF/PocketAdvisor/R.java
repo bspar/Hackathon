@@ -21,7 +21,7 @@ public final class R {
         public static final int buttons=0x7f070000;
         public static final int check=0x7f070004;
         public static final int classes=0x7f070002;
-        public static final int editText1=0x7f07001e;
+        public static final int editText1=0x7f07001d;
         public static final int editText2=0x7f070021;
         public static final int editText3=0x7f07001a;
         public static final int listMyClasses=0x7f070023;
@@ -46,7 +46,7 @@ public final class R {
         public static final int tableRow3=0x7f070017;
         public static final int tableRow4=0x7f070019;
         public static final int tableRow5=0x7f07001b;
-        public static final int tableRow7=0x7f07001d;
+        public static final int tableRow7=0x7f07001e;
         public static final int tableRow8=0x7f07001f;
         public static final int textView1=0x7f07000a;
         public static final int textView2=0x7f07000b;
